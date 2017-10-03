@@ -18,12 +18,11 @@ Following options are available:
 | Option               | Meaning                                | Default                                   |
 | -------------------- | -------------------------------------- | ----------------------------------------- |
 | flake8_executable      | flake8 executable to call.               | `flake8` (calls `flake8` in `PATH`)           |
-| cli_options          | Options to pass to the CLI.            | `--json`                                  |
+
 
 Example configuration to call custom flake8 executable:
 
 ```yaml
 # .pronto_flake8.yml
 flake8_executable: '/my/custom/node/path/.bin/flake8'
-cli_options: '--show-all-errors'
 ```
