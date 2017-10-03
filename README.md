@@ -1,4 +1,4 @@
-# [Pre-Alpha] Pronto runner for flake8 (using flake8 from npm)
+# [Pre-Alpha] Pronto runner for flake8
 
 [![Gem Version](https://badge.fury.io/rb/pronto-flake8.svg)](http://badge.fury.io/rb/pronto-flake8)
 [![Build Status](https://travis-ci.org/scoremedia/pronto-flake8.svg?branch=master)](https://travis-ci.org/scoremedia/pronto-flake8)
@@ -10,8 +10,9 @@ Pronto runner for [flake8](http://flake8.pycqa.org/en/latest/), a Python Style G
 
 
 ## Configuration of pronto-flake8
+* `flake8` should be in your path.
+* pronto-flake8 can be configured by placing a `.pronto_flake8.yml` inside the directory where pronto is run.
 
-pronto-flake8 can be configured by placing a `.pronto_flake8.yml` inside the directory where pronto is run.
 
 Following options are available:
 
