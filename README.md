@@ -24,5 +24,5 @@ Example configuration to call custom flake8 executable:
 
 ```yaml
 # .pronto_flake8.yml
-flake8_executable: '/my/custom/node/path/.bin/flake8'
+flake8_executable: '/my/custom/path/flake8'
 ```
