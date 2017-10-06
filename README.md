@@ -1,11 +1,5 @@
 # [Pre-Alpha] Pronto runner for flake8
 
-[![Gem Version](https://badge.fury.io/rb/pronto-flake8.svg)](http://badge.fury.io/rb/pronto-flake8)
-[![Build Status](https://travis-ci.org/scoremedia/pronto-flake8.svg?branch=master)](https://travis-ci.org/scoremedia/pronto-flake8)
-[![Code Climate](https://codeclimate.com/github/scoremedia/pronto-flake8/badges/gpa.svg)](https://codeclimate.com/github/scoremedia/pronto-flake8)
-[![Test Coverage](https://codeclimate.com/github/scoremedia/pronto-flake8/badges/coverage.svg)](https://codeclimate.com/github/scoremedia/pronto-flake8/coverage)
-[![Dependency Status](https://gemnasium.com/badges/github.com/scoremedia/pronto-flake8.svg)](https://gemnasium.com/github.com/scoremedia/pronto-flake8)
-
 Pronto runner for [flake8](http://flake8.pycqa.org/en/latest/), a Python Style Guide Enforcer. [What is Pronto?](https://github.com/mmozuras/pronto)
 
 
