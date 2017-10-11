@@ -6,6 +6,7 @@ module Pronto
   class Flake8 < Runner
     CONFIG_FILE = '.pronto_flake8.yml'.freeze
     CONFIG_KEYS = %w[flake8_executable].freeze
+    PYTHON_FILE_EXTENSION = '.py'.freeze
 
     def initialize(patches, commit = nil)
       super(patches, commit)
@@ -60,9 +61,18 @@ module Pronto
 
     def run_flake8
       Dir.chdir(git_repo_path) do
-        file_paths_str = files.join(' ')
-        parse_output `#{flake8_executable} #{file_paths_str}`
+        python_files = filter_python_files(files)
+        file_paths_str = python_files.join(' ')
+        if not file_paths_str.empty?
+          parse_output `#{flake8_executable} #{file_paths_str}`
+        else
+          []
+        end
       end
+    end
+
+    def filter_python_files(all_files)
+      all_files.select { |file_path| file_path.to_s.end_with? PYTHON_FILE_EXTENSION}
     end
 
     def parse_output(executable_output)

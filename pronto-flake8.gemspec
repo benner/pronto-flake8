@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
     Pronto runner for flake8.
   EOF
 
-  s.licenses = ['MIT']
+  s.licenses = ['Apache-2.0']
   s.required_ruby_version = '>= 2.0.0'
   s.rubygems_version = '1.8.23'
 

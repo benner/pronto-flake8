@@ -30,6 +30,11 @@ module Pronto
     end
 
     describe 'parsing' do
+      it 'filtering python files' do
+        files = %w[/Users/rabraham/requirements.txt /Users/rabraham/file.py]
+        exp = flake8.filter_python_files(files)
+        expect(exp).to eq(['/Users/rabraham/file.py'])
+      end
       it 'extracts violation level' do
         expect(flake8.violation_level('W391 message2')).to eq('warning')
         expect(flake8.violation_level('E391 message2')).to eq('error')

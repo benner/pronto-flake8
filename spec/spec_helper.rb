@@ -20,8 +20,6 @@ def which(cmd)
   nil
 end
 
-
-puts 'Specccc Helper'
 if which('flake8').nil?
   raise 'Please `pip install flake8` or ensure flake8 is in your PATH'
 end
