@@ -1,3 +1,4 @@
+sudo: required
 language: ruby
 rvm:
  - 2.4.2
@@ -12,3 +13,6 @@ install:
 # This is not a python project. So, no tests to run. But it fails if I don't have a script key
 script:
   - echo "No need to run python tests"
+
+after_success:
+- bundle exec codeclimate-test-reporter
