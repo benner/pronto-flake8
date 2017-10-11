@@ -73,6 +73,7 @@ module Pronto
 
     def filter_python_files(all_files)
       all_files.select { |file_path| file_path.to_s.end_with? PYTHON_FILE_EXTENSION}
+               .map { |py_file| py_file.to_s.shellescape } 
     end
 
     def parse_output(executable_output)
