@@ -9,3 +9,6 @@ python:
 install:
   - pip install -r requirements.txt
 
+# This is not a python project. So, no tests to run. But it fails if I don't have a script key
+script:
+  - echo "No need to run python tests"
