@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+echo "Calling Dummy Flake8 as Travis may not support multi language projects"
