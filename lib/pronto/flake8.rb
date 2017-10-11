@@ -63,7 +63,7 @@ module Pronto
       Dir.chdir(git_repo_path) do
         python_files = filter_python_files(files)
         file_paths_str = python_files.join(' ')
-        if not file_paths_str.empty?
+        if !file_paths_str.empty?
           parse_output `#{flake8_executable} #{file_paths_str}`
         else
           []
