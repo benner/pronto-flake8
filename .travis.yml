@@ -4,9 +4,8 @@ env:
     - CC_TEST_REPORTER_ID=787a2f89b15c637323c7340d65ec17e898ac44480706b4b4122ea040c2a88f1d
 
 before_install:
- - sudo add-apt-repository -y ppa:jonathonf/python-3.6 && sudo apt-get update && sudo apt-get --assume-yes install python3.6
- - which python3
- - pip3 install flake8
+ - pyenv global 3.5.3
+ - pip install flake8
 
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
