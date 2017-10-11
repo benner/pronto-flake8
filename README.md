@@ -1,4 +1,4 @@
-# [Pre-Alpha] Pronto runner for flake8
+# Pronto runner for flake8
 [![Gem Version](https://badge.fury.io/rb/pronto-flake8.svg)](https://badge.fury.io/rb/pronto-flake8)
 
 Pronto runner for [flake8](http://flake8.pycqa.org/en/latest/), a Python Style Guide Enforcer. [What is Pronto?](https://github.com/mmozuras/pronto)
