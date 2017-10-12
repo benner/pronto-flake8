@@ -1,7 +1,7 @@
 sudo: required
 env:
   global:
-    - CC_TEST_REPORTER_ID=787a2f89b15c637323c7340d65ec17e898ac44480706b4b4122ea040c2a88f1d
+    - CC_TEST_REPORTER_ID=a728598a72784cdb0b4ffddbb8e457cc8e699929af570894b8a110ccad1be9d2
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
