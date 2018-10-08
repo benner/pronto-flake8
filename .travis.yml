@@ -8,12 +8,12 @@ before_script:
   - ./cc-test-reporter before-build
 
 before_install:
- - pyenv global 3.5.3
- - pip install flake8
+  - pyenv global 3.6.3
+  - pip install flake8
 
 language: ruby
 rvm:
- - 2.4
- 
+  - 2.4
+
 after_script:
- - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
