@@ -62,7 +62,8 @@ git checkout -b <new_feature>
 bundle exec rspec
 gem build pronto-flake8.gemspec
 gem install pronto-flake8-<current_version>.gem # get current version from previous command
-pronto run
+uncomment the line in dummy_package/dummy.py
+pronto run --unstaged
 ```
 
 It should show

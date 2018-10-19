@@ -1,1 +1,1 @@
-example = lambda: 'example'
+# example = lambda: 'example'
