@@ -35,6 +35,7 @@ module Pronto
         exp = flake8.filter_python_files(files)
         expect(exp).to eq(['/Users/rabraham/file.py'])
       end
+
       it 'extracts violation level' do
         expect(flake8.violation_level('W391 message2')).to eq('warning')
         expect(flake8.violation_level('E391 message2')).to eq('error')
@@ -91,6 +92,7 @@ module Pronto
           expect(flake8.run).to eql([])
         end
       end
+
       context 'with patch data' do
         before(:each) do
           function_use = <<-HEREDOC
@@ -98,6 +100,7 @@ module Pronto
           add_to_index('content.py', function_use)
           create_commit
         end
+
         context 'with error in changed file' do
           before(:each) do
             create_branch('staging', checkout: true)
@@ -116,6 +119,24 @@ module Pronto
             expect(run_output.count).to eql(2)
             expect(run_output[0].msg).to eql('E999 IndentationError')
             expect(run_output[1].msg).to eql('E113 unexpected indentation')
+          end
+
+          context 'when repository uses a custom format' do
+            before(:each) do
+              configuration = <<-HEREDOC
+                [flake8]
+                format = %(path)s:%(row)d: [%(code)s] %(text)s
+              HEREDOC
+
+              add_to_index('.flake8', configuration)
+
+              create_commit
+            end
+
+            it 'correctly parses errors' do
+              run_output = flake8.run
+              expect(run_output.count).to eql(2)
+            end
           end
         end
       end

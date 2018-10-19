@@ -64,7 +64,7 @@ module Pronto
         python_files = filter_python_files(files)
         file_paths_str = python_files.join(' ')
         if !file_paths_str.empty?
-          parse_output `#{flake8_executable} #{file_paths_str}`
+          parse_output `#{flake8_executable} --format=default #{file_paths_str}`
         else
           []
         end
@@ -73,7 +73,7 @@ module Pronto
 
     def filter_python_files(all_files)
       all_files.select { |file_path| file_path.to_s.end_with? PYTHON_FILE_EXTENSION}
-               .map { |py_file| py_file.to_s.shellescape } 
+               .map { |py_file| py_file.to_s.shellescape }
     end
 
     def parse_output(executable_output)
