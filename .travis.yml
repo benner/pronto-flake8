@@ -15,5 +15,6 @@ language: ruby
 rvm:
   - 2.4
 
+
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
