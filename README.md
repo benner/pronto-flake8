@@ -29,3 +29,43 @@ Example configuration to call custom flake8 executable:
 # .pronto_flake8.yml
 flake8_executable: '/my/custom/path/flake8'
 ```
+
+## Contribution Guidelines
+### Installation
+`git clone` this repo and `cd pronto-flake8`
+
+
+
+Ruby
+```sh
+brew install cmake # or your OS equivalent
+brew install rbenv # or your OS equivalent
+rbenv install 2.4.5
+rbenv global 2.4.5 # or make it project specific
+gem install bundle
+gem install pronto
+bundle install
+```
+
+Python
+```sh
+
+virtualenv venv # tested on Python 3.6
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+Make your changes
+```sh
+git checkout -b <new_feature>
+# make your changes
+bundle exec rspec
+gem build pronto-flake8.gemspec
+gem install pronto-flake8-<current_version>.gem # get current version from previous command
+pronto run
+```
+
+It should show
+```sh
+dummy_package/dummy.py:1 E: E731 do not assign a lambda expression, use a def
+```

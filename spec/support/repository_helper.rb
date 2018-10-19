@@ -1,3 +1,4 @@
+require 'tmpdir'
 module RepositoryHelper
   module_function
 
@@ -50,4 +51,3 @@ module RepositoryHelper
     repo.checkout(branch_name, strategy: [:force])
   end
 end
-
