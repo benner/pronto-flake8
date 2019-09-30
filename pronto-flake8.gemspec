@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
   s.requirements << 'flake8 (in PATH)'
 
-  s.add_dependency('pronto', '~> 0.9.5')
+  s.add_dependency('pronto', '~> 0.9.5', '< 0.11.0')
   s.add_dependency('rugged', '~> 0.24', '>= 0.23.0')
   s.add_development_dependency('rake', '~> 12.0')
   s.add_development_dependency('rspec', '~> 3.4')
