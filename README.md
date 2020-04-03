@@ -40,8 +40,8 @@ Ruby
 ```sh
 brew install cmake # or your OS equivalent
 brew install rbenv # or your OS equivalent
-rbenv install 2.4.5
-rbenv global 2.4.5 # or make it project specific
+rbenv install 2.5.7
+rbenv global 2.5.7 # or make it project specific
 gem install bundle
 gem install pronto
 bundle install
@@ -55,18 +55,31 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Make your changes
+### Instructions for maintainers
 ```sh
-git checkout -b <new_feature>
+git checkout -b <new_feature> # or for core maintainer, just pull master after accepting merge
 # make your changes
 bundle exec rspec
-gem build pronto-flake8.gemspec
-gem install pronto-flake8-<current_version>.gem # get current version from previous command
-uncomment the line in dummy_package/dummy.py
+# Update the version in `lib/pronto/flake8/version.rb` to the next version
+* gem build pronto-flake8.gemspec
+* gem install pronto-flake8-<current_version>.gem # get it from lib/pronto/flake8/version.rb 
+# uncomment the line in dummy_package/dummy.py
 pronto run --unstaged
 ```
 
 It should show
 ```sh
 dummy_package/dummy.py:1 E: E731 do not assign a lambda expression, use a def
+```
+
+* Recomment the line in dummy_package/dummy.py
+
+## Publish
+```
+export VERSION=<gem version>
+export TAG="v$VERSION"
+git pull
+git tag -a $TAG -m $TAG
+git show $TAG
+git push origin $TAG
 ```
