@@ -82,4 +82,6 @@ git pull
 git tag -a $TAG -m $TAG
 git show $TAG
 git push origin $TAG
+# Ensure you build the gem with with `gem build` above.
+gem push "pronto-flake8-$VERSION.gem"
 ```
