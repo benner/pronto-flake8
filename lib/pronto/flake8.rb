@@ -47,7 +47,7 @@ module Pronto
 
       CONFIG_KEYS.each do |config_key|
         next unless config[config_key]
-        send("#{config_key}=", config[config_key])
+	instance_variable_set("@#{config_key}", config[config_key])
       end
     end
 
